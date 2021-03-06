@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import { UserService } from './user.service';
 import { User } from './user.model';
 
@@ -10,9 +10,13 @@ import { User } from './user.model';
 export class AppComponent {
   users: User[];
 
-  constructor(private userService: UserService) {
+  constructor(@Inject(UserService) private userService: any) {
     this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
     });
   }
 }
+
+// @Inject(UserService) private userService: any
+// = @Inject(UserService) private userService: UserService
+// = private userService: UserService
