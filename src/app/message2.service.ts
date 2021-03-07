@@ -1,14 +1,10 @@
 import { Injectable } from '@angular/core';
-import { someFactory } from './message2.service';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
-  // useExisting: Message2Service,
-  useFactory: someFactory,
-  deps: [HttpClient]
 })
-export class MessageService {
+export class Message2Service {
   constructor(private http: HttpClient) {}
 
   getMessage(): string {
@@ -17,6 +13,10 @@ export class MessageService {
       .subscribe((users) => {
         console.log(users);
       });
-    return 'Message from MessageService';
+    return 'Message from Message2Service';
   }
+}
+
+export function someFactory(http: HttpClient): any {
+  return new Message2Service(http);
 }

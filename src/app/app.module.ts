@@ -9,11 +9,14 @@ import { ChildComponent } from './child.component';
 @NgModule({
   declarations: [AppComponent, ParentComponent, ChildComponent],
   imports: [BrowserModule, HttpClientModule],
+  providers: [
+    {
+      provide: 'API_URL',
+      useValue: 'https://v2.jsonplaceholder.typicode.com',
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
 
-// @Self() @Optional() @SkipSelf() @Host()
-
-// 1. <app-parent><app-child></app-child></app-parent>
-// 2. <app-parent appMyDirective></app-parent>
+// useValue / useClass / useExisting / useFactory
