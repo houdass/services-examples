@@ -2,15 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CounterService } from './counter.service';
 import { HttpClientModule } from '@angular/common/http';
-import { Counter1Component } from './counter1.component';
-import { Counter2Component } from './counter2.component';
+import { ParentComponent } from './parent.component';
+import { ChildComponent } from './child.component';
 
 @NgModule({
-  declarations: [AppComponent, Counter1Component, Counter2Component],
+  declarations: [AppComponent, ParentComponent, ChildComponent],
   imports: [BrowserModule, HttpClientModule],
-  providers: [CounterService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
