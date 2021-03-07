@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Host } from '@angular/core';
 import { MessageService } from './message.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { MessageService } from './message.service';
 export class ChildComponent {
   message: string;
 
-  constructor(public messageService: MessageService) {
-    this.message = this.messageService.getMessage();
+  constructor(@Host() public messageService: MessageService) {
+    this.message = this.messageService?.getMessage();
   }
 }
