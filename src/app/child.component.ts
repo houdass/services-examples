@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import { MessageService } from './message.service';
 import {Message2Service} from './message2.service';
 
