@@ -6,6 +6,6 @@ import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [ProductComponent],
-  imports: [CommonModule, CoreModule.forChild(), ProductRoutingModule],
+  imports: [CommonModule, CoreModule, ProductRoutingModule],
 })
 export class ProductModule {}

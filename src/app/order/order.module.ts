@@ -6,6 +6,6 @@ import {OrderRoutingModule} from './order-routing.module';
 
 @NgModule({
   declarations: [OrderComponent],
-  imports: [CommonModule, CoreModule.forChild(), OrderRoutingModule],
+  imports: [CommonModule, CoreModule, OrderRoutingModule],
 })
 export class OrderModule {}
