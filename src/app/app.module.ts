@@ -2,26 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ParentComponent } from './parent.component';
-import { ChildComponent } from './child.component';
-import { API_URL } from './api-url.token';
+import { ProductModule } from './product/product.module';
+import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, ParentComponent, ChildComponent],
-  imports: [BrowserModule, HttpClientModule],
-  providers: [
-    {
-      provide: API_URL,
-      useValue: 'https://jsonplaceholder.typicode.com/posts',
-    },
-    {
-      provide: 'API_URL',
-      useValue: 'abbbcbcbcb',
-    },
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, ProductModule, CoreModule.forRoot(), AppRoutingModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
-// String Token / Type Token / Injection Token
